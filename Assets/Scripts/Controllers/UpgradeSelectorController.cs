@@ -16,7 +16,7 @@ namespace Controllers
         private UpgradesConfig _upgradesConfig;
 
         private List<UpgradeModel> _upgrades;
-        private List<UpgradeModel> _selectedUpgrades;
+        private List<IUpgrade> _selectedUpgrades;
 
         private IUpgradeFacade _upgradeFacade;
 
@@ -24,10 +24,10 @@ namespace Controllers
         {
             _upgradesConfig = Resources.Load<UpgradesConfig>("Configs/UpgradesConfig");
 
-            _upgradeFacade = new UpgradeFacade();
+            _upgradeFacade = new UpgradeFacade(_upgradesConfig);
 
             _upgrades = new List<UpgradeModel>();
-            _selectedUpgrades = new List<UpgradeModel>();
+            _selectedUpgrades = new List<IUpgrade>();
 
             _upgradeSelectorView.OnUpgradeSelected += HandleOnUpgradeSelected;
         }
@@ -50,7 +50,12 @@ namespace Controllers
             for (int i = 0; i < 2; i++)
             {
                 var randomIndex = Random.Range(0, _upgrades.Count);
-                _selectedUpgrades.Add(_upgrades[randomIndex]);
+                var upgradeType = _upgrades[randomIndex].UpgradeType;
+                var upgrade = _upgradeFacade.GetUpgrade(upgradeType);
+                if (!upgrade.IsMax)
+                {
+                    _selectedUpgrades.Add(upgrade);
+                }
                 _upgrades.RemoveAt(randomIndex);
             }
         }

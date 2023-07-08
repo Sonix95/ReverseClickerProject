@@ -1,7 +1,17 @@
+using Enums;
+using UnityEngine;
+using UnityEngine.UI;
+
 namespace Upgrades
 {
     public interface IUpgrade
     {
+        Sprite Image { get; }
+        string Name { get; }
+        string Description { get; }
+        UpgradeTypes UpgradeType { get; }
+
+
         int Rank { get; }
         bool IsMax { get; }
 

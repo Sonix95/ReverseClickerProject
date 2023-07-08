@@ -29,8 +29,6 @@ namespace Componets
 
         private void OnUpgradeSelect()
         {
-            Debug.LogError($"UpgradeElementView - CLICK -- {_name.text}");
-
             OnUpgradeSelected?.Invoke(_upgradeType);
         }
     }

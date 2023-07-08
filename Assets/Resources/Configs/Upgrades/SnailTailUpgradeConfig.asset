@@ -19,3 +19,21 @@ MonoBehaviour:
     Duration: 15
   - SlowClicksInPercents: 15
     Duration: 15
+  - SlowClicksInPercents: 20
+    Duration: 20
+  - SlowClicksInPercents: 25
+    Duration: 25
+  - SlowClicksInPercents: 30
+    Duration: 30
+  - SlowClicksInPercents: 35
+    Duration: 30
+  - SlowClicksInPercents: 40
+    Duration: 30
+  - SlowClicksInPercents: 45
+    Duration: 30
+  - SlowClicksInPercents: 50
+    Duration: 30
+  - SlowClicksInPercents: 55
+    Duration: 30
+  - SlowClicksInPercents: 60
+    Duration: 35

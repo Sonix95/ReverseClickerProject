@@ -4,6 +4,7 @@ using Models;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Upgrades;
 
 namespace Views
 {
@@ -22,7 +23,7 @@ namespace Views
             _upgrades = new List<UpgradeElementView>();
         }
 
-        public void Enable(List<UpgradeModel> upgrades)
+        public void Enable(List<IUpgrade> upgrades)
         {
             foreach (var upgrade in upgrades)
             {
@@ -49,7 +50,6 @@ namespace Views
 
         private void HandleUpgradeSelected(UpgradeTypes upgradeType)
         {
-            Debug.LogError($"UpgradeSelectorView HandleUpgradeClicked -- {upgradeType}");
             OnUpgradeSelected?.Invoke(upgradeType);
         }
     }

@@ -1,31 +1,44 @@
 using Configs.Upgrades;
+using Enums;
+using Models;
 using UnityEngine;
 
 namespace Upgrades
 {
     public class SnailTailUpgrade : IUpgrade
     {
-        private int _rank;
+        public Sprite Image { get; }
+        public string Name { get; }
+        public string Description { get; private set; }
+        public UpgradeTypes UpgradeType { get; }
 
         public int Rank { get; }
-        public bool IsMax => _rank >= _config.Rankers.Count;
+        public bool IsMax => _rank > _config.Rankers.Count - 1;
 
         private SnailTailUpgradeConfig _config;
+        private int _rank;
+        private string _description;
 
-        public SnailTailUpgrade()
+        public SnailTailUpgrade(UpgradeModel model)
         {
             _config = Resources.Load<SnailTailUpgradeConfig>("Configs/Upgrades/SnailTailUpgradeConfig");
-        }
+            _rank = 0;
+            _description = model.Description;
 
+            Image = model.Image;
+            Name = model.Name;
+            Description = string.Format(_description, _config.Rankers[_rank].SlowClicksInPercents, _config.Rankers[_rank].Duration);
+            UpgradeType = model.UpgradeType;
+        }
 
         public void UpdateRank()
         {
+            _rank++;
+
             if (!IsMax)
             {
-                _rank++;
+                Description = string.Format(_description, _config.Rankers[_rank].SlowClicksInPercents, _config.Rankers[_rank].Duration);
             }
-
-            Debug.LogError($"UpdateRank {_rank}");
         }
     }
 }

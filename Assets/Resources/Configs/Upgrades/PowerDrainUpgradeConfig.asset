@@ -19,3 +19,25 @@ MonoBehaviour:
     Duration: 15
   - DecreaseClickPowerInPercents: 15
     Duration: 15
+  - DecreaseClickPowerInPercents: 20
+    Duration: 20
+  - DecreaseClickPowerInPercents: 25
+    Duration: 25
+  - DecreaseClickPowerInPercents: 30
+    Duration: 30
+  - DecreaseClickPowerInPercents: 35
+    Duration: 30
+  - DecreaseClickPowerInPercents: 40
+    Duration: 30
+  - DecreaseClickPowerInPercents: 45
+    Duration: 30
+  - DecreaseClickPowerInPercents: 50
+    Duration: 30
+  - DecreaseClickPowerInPercents: 55
+    Duration: 35
+  - DecreaseClickPowerInPercents: 60
+    Duration: 35
+  - DecreaseClickPowerInPercents: 65
+    Duration: 35
+  - DecreaseClickPowerInPercents: 70
+    Duration: 35
