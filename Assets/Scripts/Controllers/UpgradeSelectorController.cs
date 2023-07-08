@@ -1,40 +1,60 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Configs;
 using Enums;
+using Managers;
 using Models;
 using UnityEngine;
 using Upgrades;
 using Views;
+using Random = UnityEngine.Random;
 
 namespace Controllers
 {
     public class UpgradeSelectorController : MonoBehaviour
     {
+        public event Action<IUpgrade> UpgradeUpdated;
+
         [SerializeField] private UpgradeSelectorView _upgradeSelectorView;
 
         private UpgradesConfig _upgradesConfig;
+        private WavesConfig _waveConfig;
 
         private List<UpgradeModel> _upgrades;
         private List<IUpgrade> _selectedUpgrades;
 
         private IUpgradeFacade _upgradeFacade;
 
+        private int _currentWave;
+        private int _currentWaveEndTime;
+        private int _currentTime;
+
         private void Awake()
         {
             _upgradesConfig = Resources.Load<UpgradesConfig>("Configs/UpgradesConfig");
+            _waveConfig = Resources.Load<WavesConfig>("Configs/WavesConfig");
 
             _upgradeFacade = new UpgradeFacade(_upgradesConfig);
 
             _upgrades = new List<UpgradeModel>();
             _selectedUpgrades = new List<IUpgrade>();
-
             _upgradeSelectorView.OnUpgradeSelected += HandleOnUpgradeSelected;
+            GameManager.Instance.UpdateController.OnOneSecondPassed += HandleOneSecondPassed;
+
+            _currentWave = 0;
+            _currentWaveEndTime = _waveConfig.Waves[_currentWave].Duration;
+            _currentTime = 0;
         }
 
-        private void OnEnable()
+        private void HandleOneSecondPassed()
         {
-            StartCoroutine(ShowUpgrades());
+            _currentTime++;
+            if (_currentTime >= _currentWaveEndTime)
+            {
+                GameManager.Instance.UpdateController.FreezeTime();
+                StartCoroutine(ShowUpgrades());
+            }
         }
 
         private void ResetUpgrades()
@@ -62,6 +82,7 @@ namespace Controllers
 
         private IEnumerator ShowUpgrades()
         {
+            Debug.LogError($"ShowUpgrades");
             ResetUpgrades();
             UpdateUpgrades();
             yield return new WaitForSeconds(1f);
@@ -72,9 +93,18 @@ namespace Controllers
         {
             _upgradeFacade.Upgrade(upgrade);
 
+            UpgradeUpdated?.Invoke(_upgradeFacade.GetUpgrade(upgrade));
+
             _upgradeSelectorView.Disable();
 
-            StartCoroutine(ShowUpgrades());
+            _currentWave++;
+            if (_currentWave >= _waveConfig.Waves.Count)
+            {
+                _currentWave = _waveConfig.Waves.Count - 1;
+            }
+            _currentWaveEndTime += _waveConfig.Waves[_currentWave].Duration;
+
+            GameManager.Instance.UpdateController.UnFreezeTime();
         }
     }
 }

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Models;
 using UnityEngine;
 
-namespace WaveConfig
+namespace Configs
 {
     [CreateAssetMenu(fileName = "WavesConfig", menuName = "Configs/Create WavesConfig")]
     public class WavesConfig : ScriptableObject

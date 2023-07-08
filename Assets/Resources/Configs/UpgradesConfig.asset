@@ -15,9 +15,9 @@ MonoBehaviour:
   Upgrades:
   - Name: Snail Tail
     UpgradeType: 0
-    Image: {fileID: 21300000, guid: eca5019039a14594cbd56c55afebb382, type: 3}
+    Image: {fileID: 21300000, guid: cb9b03702cbb65c43bf342b92b632d8d, type: 3}
     Description: Slow clicks by {0}% for {1} sec.
   - Name: Power Drain
     UpgradeType: 1
-    Image: {fileID: 21300000, guid: f6148641e7c6e354881c66d9c0b24cc8, type: 3}
+    Image: {fileID: 21300000, guid: 84d4d6f6ed94fdc4d87476948b460356, type: 3}
     Description: "Decrease click\u2019s power by {0}% for {1} sec."

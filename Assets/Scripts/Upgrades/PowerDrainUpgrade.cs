@@ -12,7 +12,7 @@ namespace Upgrades
         public string Description { get; private set; }
         public UpgradeTypes UpgradeType { get; }
 
-        public int Rank { get; }
+        public int Rank => _rank;
         public bool IsMax => _rank > _config.Rankers.Count - 1;
 
         private PowerDrainUpgradeConfig _config;
