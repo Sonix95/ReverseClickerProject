@@ -1,5 +1,6 @@
 using Configs.Upgrades;
 using Enums;
+using Managers;
 using Models;
 using UnityEngine;
 
@@ -39,6 +40,15 @@ namespace Upgrades
             {
                 Description = string.Format(_description, _config.Rankers[_rank].SlowClicksInPercents, _config.Rankers[_rank].Duration);
             }
+        }
+
+        public void Use()
+        {
+            GameManager.Instance.ClickerController.SetTempSpeed(_config.Rankers[_rank].SlowClicksInPercents, _config.Rankers[_rank].Duration);
+        }
+        public float GetTimer()
+        {
+            return _config.Rankers[_rank].Duration;
         }
     }
 }

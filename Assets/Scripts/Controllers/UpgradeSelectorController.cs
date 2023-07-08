@@ -82,7 +82,6 @@ namespace Controllers
 
         private IEnumerator ShowUpgrades()
         {
-            Debug.LogError($"ShowUpgrades");
             ResetUpgrades();
             UpdateUpgrades();
             yield return new WaitForSeconds(1f);
@@ -103,8 +102,9 @@ namespace Controllers
                 _currentWave = _waveConfig.Waves.Count - 1;
             }
             _currentWaveEndTime += _waveConfig.Waves[_currentWave].Duration;
-
+            
             GameManager.Instance.UpdateController.UnFreezeTime();
+            GameManager.Instance.ClickerController.EnterNewWave();
         }
     }
 }

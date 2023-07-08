@@ -13,6 +13,8 @@ namespace Managers
 
         [SerializeField] private AppUpdateController _updateController;
         [SerializeField] private UpgradeSelectorController _upgradeSelectorController;
+        [SerializeField] private ClickerController _clickerController;
+
         [SerializeField] private Slider _startBar;
         [SerializeField] private CanvasGroup _startCanvas;
 
@@ -21,14 +23,13 @@ namespace Managers
 
         public AppUpdateController UpdateController => _updateController;
         public UpgradeSelectorController UpgradeSelectorController => _upgradeSelectorController;
+        public ClickerController ClickerController => _clickerController;
 
-
-
-        private int _shards = 0;
-        private int _screenDurability = 100;
+        private float _shards = 0;
+        private float _screenDurability = 1000;
         private bool _isStarted = false;
 
-        public int Shards
+        public float Shards
         {
             get => _shards;
             set
@@ -38,14 +39,32 @@ namespace Managers
             }
         }
 
-        public int ScreenDurability
+        public float ScreenDurability
         {
             get => _screenDurability;
             set
             {
                 _screenDurability = value;
-                OnScreenDurabilityUpdated?.Invoke();
+                if (_screenDurability <= 0)
+                {
+                    GameOver();
+                }
+                else
+                {
+                    OnScreenDurabilityUpdated?.Invoke();
+                }
             }
+        }
+
+        private void GameOver()
+        {
+            _updateController.FreezeTime();
+            _startBar.value = 0;
+            _startCanvas.alpha = 1.0f;
+            _isStarted = false;
+
+            _shards = 0;
+            _screenDurability = 1000;
         }
 
         private void Awake()

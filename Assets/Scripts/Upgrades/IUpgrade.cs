@@ -1,3 +1,4 @@
+using System;
 using Enums;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,11 +17,12 @@ namespace Upgrades
         bool IsMax { get; }
 
         void UpdateRank();
+        void Use();
+        float GetTimer();
 
         //string Name { get; }
         //void UpdateRank();
         //void Activate();
-        //void Use();
         //void Stop();
         //void ChargeBoost(bool forceFullCharge = false);
         //void UpdateBoostAfterCharge();

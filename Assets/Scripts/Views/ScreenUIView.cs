@@ -53,7 +53,7 @@ namespace Views
         {
             if (_upgrades.Keys.Contains(upgrade.UpgradeType))
             {
-                _upgrades[upgrade.UpgradeType].UpdateLevelIcon(upgrade.Rank.ToString());
+                _upgrades[upgrade.UpgradeType].UpdateLevelIcon(upgrade.Rank);
             }
             else
             {
