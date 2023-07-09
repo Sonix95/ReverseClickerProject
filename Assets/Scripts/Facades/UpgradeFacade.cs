@@ -38,7 +38,6 @@ namespace Upgrades
                         _upgradeObjects.Add(UpgradeTypes.PowerDrain, new PowerDrainUpgrade(model));
                         break;
                 }
-                _upgradeObjects[upgradeType].UpdateRank();
             }
         }
 

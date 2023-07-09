@@ -30,6 +30,7 @@ namespace Componets
         public void UpdateLevelIcon(int rank)
         {
             _level.text = _upgrade.Rank.ToString();
+            _spriteBack.sprite = _upgrade.Image;
         }
 
         public void Init(IUpgrade upgrade)

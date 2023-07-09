@@ -15,25 +15,37 @@ MonoBehaviour:
   Rankers:
   - SlowClicksInPercents: 5
     Duration: 15
+    Image: {fileID: 21300000, guid: cda59994b4dc60446b6840fc6126ca23, type: 3}
   - SlowClicksInPercents: 10
     Duration: 15
+    Image: {fileID: 21300000, guid: 0c53ac650ff8e09488b9bbe8304775b6, type: 3}
   - SlowClicksInPercents: 15
     Duration: 15
+    Image: {fileID: 21300000, guid: b92a8b1c3c9d51a4595149782fec5328, type: 3}
   - SlowClicksInPercents: 20
     Duration: 20
+    Image: {fileID: 21300000, guid: d9568e550ea4f354f8d0a6d406df639a, type: 3}
   - SlowClicksInPercents: 25
     Duration: 25
+    Image: {fileID: 21300000, guid: 498b311f379058d4fb8c289d62d637b6, type: 3}
   - SlowClicksInPercents: 30
     Duration: 30
+    Image: {fileID: 21300000, guid: 2c1fa3ae186621c4487809083c239890, type: 3}
   - SlowClicksInPercents: 35
     Duration: 30
+    Image: {fileID: 21300000, guid: 37a97c08aadddb541a97dddec7cbe880, type: 3}
   - SlowClicksInPercents: 40
     Duration: 30
+    Image: {fileID: 21300000, guid: cccf080a5a6e7564c9658cf1e71f0b64, type: 3}
   - SlowClicksInPercents: 45
     Duration: 30
+    Image: {fileID: 21300000, guid: 241cc1a96db004942bda857cf441db80, type: 3}
   - SlowClicksInPercents: 50
     Duration: 30
+    Image: {fileID: 21300000, guid: c1f31c1f44b0bbc48a57d1368a746f32, type: 3}
   - SlowClicksInPercents: 55
     Duration: 30
+    Image: {fileID: 21300000, guid: bfdf1e797f030a54ba16b1a4c12f1801, type: 3}
   - SlowClicksInPercents: 60
     Duration: 35
+    Image: {fileID: 21300000, guid: 09328389ea0204e4d86bd8734ab2ee35, type: 3}

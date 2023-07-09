@@ -8,7 +8,7 @@ namespace Upgrades
 {
     public class PowerDrainUpgrade : IUpgrade
     {
-        public Sprite Image { get; }
+        public Sprite Image { get; private set; }
         public string Name { get; }
         public string Description { get; private set; }
         public UpgradeTypes UpgradeType { get; }
@@ -26,7 +26,7 @@ namespace Upgrades
             _rank = 0;
             _description = model.Description;
 
-            Image = model.Image;
+            Image = _config.Rankers[_rank].Image;
             Name = model.Name;
             Description = string.Format(_description, _config.Rankers[_rank].DecreaseClickPowerInPercents, _config.Rankers[_rank].Duration);
             UpgradeType = model.UpgradeType;
@@ -39,6 +39,7 @@ namespace Upgrades
             if (!IsMax)
             {
                 Description = string.Format(_description, _config.Rankers[_rank].DecreaseClickPowerInPercents, _config.Rankers[_rank].Duration);
+                Image = _config.Rankers[_rank].Image;
             }
         }
 

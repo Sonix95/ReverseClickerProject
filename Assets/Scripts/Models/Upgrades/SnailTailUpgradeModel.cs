@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace Models
 {
@@ -7,5 +8,6 @@ namespace Models
     {
         public int SlowClicksInPercents;
         public int Duration;
+        public Sprite Image;
     }
 }

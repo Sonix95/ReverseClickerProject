@@ -15,29 +15,43 @@ MonoBehaviour:
   Rankers:
   - DecreaseClickPowerInPercents: 5
     Duration: 15
+    Image: {fileID: 21300000, guid: fad018967dd549246b4b56b0f3e192e7, type: 3}
   - DecreaseClickPowerInPercents: 10
     Duration: 15
+    Image: {fileID: 21300000, guid: edcd038e008eaae4d8ea9473abfc6a8a, type: 3}
   - DecreaseClickPowerInPercents: 15
     Duration: 15
+    Image: {fileID: 21300000, guid: 465ede5d54493934c882a77757e14646, type: 3}
   - DecreaseClickPowerInPercents: 20
     Duration: 20
+    Image: {fileID: 21300000, guid: 635ff18f44e1df6479ffa41c3370b3a2, type: 3}
   - DecreaseClickPowerInPercents: 25
     Duration: 25
+    Image: {fileID: 21300000, guid: 425f66b326e3605408432126837a0017, type: 3}
   - DecreaseClickPowerInPercents: 30
     Duration: 30
+    Image: {fileID: 21300000, guid: cce8f49c817d83c4fb6b446979b10891, type: 3}
   - DecreaseClickPowerInPercents: 35
     Duration: 30
+    Image: {fileID: 21300000, guid: b800f7dac61a88341ad6b068e46e22d1, type: 3}
   - DecreaseClickPowerInPercents: 40
     Duration: 30
+    Image: {fileID: 21300000, guid: a6278cb85261c2541ba765167511b3d6, type: 3}
   - DecreaseClickPowerInPercents: 45
     Duration: 30
+    Image: {fileID: 21300000, guid: 4753004508e44174791a5e5722259c85, type: 3}
   - DecreaseClickPowerInPercents: 50
     Duration: 30
+    Image: {fileID: 21300000, guid: 864879a2974de274390265c7983559e3, type: 3}
   - DecreaseClickPowerInPercents: 55
     Duration: 35
+    Image: {fileID: 21300000, guid: 2c9ca47e723fe8e45af4875b071d7d40, type: 3}
   - DecreaseClickPowerInPercents: 60
     Duration: 35
+    Image: {fileID: 21300000, guid: 5f2add173767a204f993be5811bf5524, type: 3}
   - DecreaseClickPowerInPercents: 65
     Duration: 35
+    Image: {fileID: 21300000, guid: 3f16f38d1ad321b45a2b8f4084edb970, type: 3}
   - DecreaseClickPowerInPercents: 70
     Duration: 35
+    Image: {fileID: 21300000, guid: 5528378ffa17c5f459db2d93660f9d36, type: 3}
